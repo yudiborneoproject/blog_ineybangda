@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', 'BlogController@index');
+/*Route::get('/isi_post', function () {
+    return view('blog.isi_post');
+}); */
+Route::get('/isi-post/{slug}', 'BlogController@isi_blog')->name('blog.isi');
 
 
 
